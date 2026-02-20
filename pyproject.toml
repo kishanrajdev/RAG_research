@@ -1,0 +1,20 @@
+[project]
+name = "commonsensereasoning-rag"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "kishanrajdev",email = "kishanrajdev047@gmail.com"}
+]
+requires-python = ">=3.11, <3.15"
+dependencies = [
+    "azure-cosmos (>=4.14.5,<5.0.0)",
+    "python-dotenv (>=1.2.1,<2.0.0)",
+    "openai (>=2.16.0,<3.0.0)",
+    "pandas (>=3.0.0,<4.0.0)",
+    "spacy (>=3.8.11,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

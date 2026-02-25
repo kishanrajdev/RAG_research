@@ -14,7 +14,7 @@ COSMOS_URI = os.environ["COSMOS_URI"]
 COSMOS_KEY = os.environ["COSMOS_KEY"]
 DB_NAME = os.environ["COSMOS_DB"]
 PRODUCTS_CONTAINER = os.environ.get("COSMOS_PRODUCTS_CONTAINER")
-JSONL_PATH = "data/meta_All_Beauty.jsonl"
+JSONL_PATH = "data/meta_Beauty_and_Personal_Care.jsonl"
 EMBEDDING_MODEL = "text-embedding-3-large"
 # MAX_INITIAL_INSERTS = 10  # limit to insert initially first N records
 
@@ -94,6 +94,9 @@ with open(JSONL_PATH, "r") as f:
     for line_num, line in enumerate(f, start=1):
         raw = json.loads(line)
         parent_asin = raw["parent_asin"]
+        # if parent_asin not in ("B00JRGOKQ8", "B07HRJL27Z", "B07J6FWK57", "B005X1Y7I2"):
+        if parent_asin not in ("B00GJX58PE", "B009NNFB0O", "B00I32AN4K", "B01MQS7GFT", "B01K1HPA60", "B01LSUQSB0", "B001MA0QY2"):
+            continue
 
         doc = {
             "id": str(uuid.uuid4()),
